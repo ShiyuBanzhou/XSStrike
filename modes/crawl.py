@@ -54,6 +54,23 @@ def crawl(scheme, host, main_url, form, blindXSS, blindPayload, headers, delay, 
                                                     (green, url, end))
                                         logger.vuln('Vector for %s%s%s: %s' %
                                                     (green, paramName, end, payload))
+                                        # --- 记录漏洞信息 ---
+                                        try:
+                                            finding = {
+                                                'url': url,
+                                                'parameter': paramName,
+                                                'payload': payload, # 使用这里获取的 payload
+                                                'confidence': confidence, # 加入置信度
+                                                'mode': 'crawl' # 标记来源是 crawl 模式
+                                            }
+                                            # 检查全局变量是否存在且为列表
+                                            if isinstance(core.config.globalVariables.get('vulnerabilities'), list):
+                                                 core.config.globalVariables['vulnerabilities'].append(finding)
+                                            else:
+                                                 core.config.globalVariables['vulnerabilities'] = [finding] # 重新初始化
+                                        except Exception as e:
+                                            logger.error(f"记录漏洞发现时出错 (crawl): {e}")
+                                        # --- ---
                                         break
                                     except IndexError:
                                         pass

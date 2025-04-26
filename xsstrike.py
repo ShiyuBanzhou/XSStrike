@@ -111,6 +111,10 @@ logger = core.log.setup_logger()
 
 core.config.globalVariables = vars(args)
 
+# --- 初始化漏洞存储列表 ---
+core.config.globalVariables['vulnerabilities'] = []
+# ---  ---
+
 # Import everything else required from core lib
 from core.config import blindPayload
 from core.encoders import base64
@@ -165,37 +169,72 @@ if not target and not args_seeds:  # if the user hasn't supplied a url
     logger.no_format('\n' + parser.format_help().lower())
     quit()
 
-if fuzz:
-    singleFuzz(target, paramData, encoding, headers, delay, timeout)
-elif not recursive and not args_seeds:
-    if args_file:
-        bruteforcer(target, paramData, payloadList, encoding, headers, delay, timeout)
+try:
+    if fuzz:
+        singleFuzz(target, paramData, encoding, headers, delay, timeout)
+    elif not recursive and not args_seeds:
+        if args_file:
+            bruteforcer(target, paramData, payloadList, encoding, headers, delay, timeout)
+        else:
+            scan(target, paramData, encoding, headers, delay, timeout, skipDOM, skip)
     else:
-        scan(target, paramData, encoding, headers, delay, timeout, skipDOM, skip)
-else:
-    if target:
-        seedList.append(target)
-    for target in seedList:
-        logger.run('Crawling the target')
-        scheme = urlparse(target).scheme
-        logger.debug('Target scheme: {}'.format(scheme))
-        host = urlparse(target).netloc
-        main_url = scheme + '://' + host
-        crawlingResult = photon(target, headers, level,
-                                threadCount, delay, timeout, skipDOM)
-        forms = crawlingResult[0]
-        domURLs = list(crawlingResult[1])
-        difference = abs(len(domURLs) - len(forms))
-        if len(domURLs) > len(forms):
-            for i in range(difference):
-                forms.append(0)
-        elif len(forms) > len(domURLs):
-            for i in range(difference):
-                domURLs.append(0)
-        threadpool = concurrent.futures.ThreadPoolExecutor(max_workers=threadCount)
-        futures = (threadpool.submit(crawl, scheme, host, main_url, form,
-                                     blindXSS, blindPayload, headers, delay, timeout, encoding) for form, domURL in zip(forms, domURLs))
-        for i, _ in enumerate(concurrent.futures.as_completed(futures)):
-            if i + 1 == len(forms) or (i + 1) % threadCount == 0:
-                logger.info('Progress: %i/%i\r' % (i + 1, len(forms)))
-        logger.no_format('')
+        if target:
+            seedList.append(target)
+        for target in seedList:
+            logger.run('Crawling the target')
+            scheme = urlparse(target).scheme
+            logger.debug('Target scheme: {}'.format(scheme))
+            host = urlparse(target).netloc
+            main_url = scheme + '://' + host
+            crawlingResult = photon(target, headers, level,
+                                    threadCount, delay, timeout, skipDOM)
+            forms = crawlingResult[0]
+            domURLs = list(crawlingResult[1])
+            difference = abs(len(domURLs) - len(forms))
+            if len(domURLs) > len(forms):
+                for i in range(difference):
+                    forms.append(0)
+            elif len(forms) > len(domURLs):
+                for i in range(difference):
+                    domURLs.append(0)
+            threadpool = concurrent.futures.ThreadPoolExecutor(max_workers=threadCount)
+            futures = (threadpool.submit(crawl, scheme, host, main_url, form,
+                                         blindXSS, blindPayload, headers, delay, timeout,   encoding) for form, domURL in zip(forms, domURLs))
+            for i, _ in enumerate(concurrent.futures.as_completed(futures)):
+                if i + 1 == len(forms) or (i + 1) % threadCount == 0:
+                    logger.info('Progress: %i/%i\r' % (i + 1, len(forms)))
+            logger.no_format('')
+
+finally: # 确保无论如何都尝试保存结果
+    # --- 保存漏洞发现 ---
+    logger.info("检查最终漏洞发现...")
+    final_vulnerabilities = core.config.globalVariables.get('vulnerabilities', [])
+    if final_vulnerabilities:
+        logger.good(f"发现 {len(final_vulnerabilities)} 个潜在漏洞条目，正在去重并保存到文件...")
+
+        unique_vulns_set = set()
+        unique_vulns_list = []
+        # 去重逻辑
+        for vuln in final_vulnerabilities:
+            # 基于 URL, 参数, Payload 创建唯一标识符
+            vuln_identifier = (
+                vuln.get('url', ''),
+                vuln.get('parameter', ''),
+                vuln.get('payload', '')
+            )
+            # 检查标识符是否已存在
+            if vuln_identifier not in unique_vulns_set:
+                unique_vulns_set.add(vuln_identifier)
+                unique_vulns_list.append(vuln) # 添加 unique 发现
+
+        logger.info(f"去重后剩余 {len(unique_vulns_list)} 个唯一漏洞发现。")
+
+        try:
+            with open("vulnerable_findings.json", "w", encoding="utf-8") as f:
+                json.dump(unique_vulns_list, f, indent=4, ensure_ascii=False)
+            logger.good("漏洞发现已保存至 vulnerable_findings.json")
+        except Exception as e:
+            logger.error(f"保存漏洞发现失败: {e}")
+    else:
+        logger.info("未发现需要保存的漏洞信息。")
+    # --- ---

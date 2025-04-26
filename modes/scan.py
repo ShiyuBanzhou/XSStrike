@@ -107,6 +107,24 @@ def scan(target, paramData, encoding, headers, delay, timeout, skipDOM, skip):
                     logger.good('Payload: %s' % loggerVector)
                     logger.info('Efficiency: %i' % bestEfficiency)
                     logger.info('Confidence: %i' % confidence)
+                    # --- 记录漏洞信息 ---
+                    try:
+                        finding = {
+                            'url': url,
+                            'parameter': paramName,
+                            'payload': loggerVector, # 使用日志中显示的 payload
+                            'confidence': confidence,
+                            'efficiency': bestEfficiency,
+                            'mode': 'scan' # 标记来源是 scan 模式
+                        }
+                        # 检查全局变量是否存在且为列表
+                        if isinstance(core.config.globalVariables.get('vulnerabilities'), list):
+                            core.config.globalVariables['vulnerabilities'].append(finding)
+                        else:
+                            core.config.globalVariables['vulnerabilities'] = [finding] # 重新初始化
+                    except Exception as e:
+                        logger.error(f"记录漏洞发现时出错: {e}")
+                    # --- ---
                     if not skip:
                         choice = input(
                             '%s Would you like to continue scanning? [y/N] ' % que).lower()
@@ -117,4 +135,23 @@ def scan(target, paramData, encoding, headers, delay, timeout, skipDOM, skip):
                     logger.good('Payload: %s' % loggerVector)
                     logger.info('Efficiency: %i' % bestEfficiency)
                     logger.info('Confidence: %i' % confidence)
+                    # --- 记录漏洞信息 ---
+                    try:
+                        finding = {
+                            'url': url,
+                            'parameter': paramName,
+                            'payload': loggerVector, # 使用日志中显示的 payload
+                            'confidence': confidence,
+                            'efficiency': bestEfficiency,
+                            'mode': 'scan' # 标记来源是 scan 模式
+                        }
+                        # 检查全局变量是否存在且为列表
+                        if isinstance(core.config.globalVariables.get('vulnerabilities'), list):
+                            core.config.globalVariables['vulnerabilities'].append(finding)
+                        else:
+                            core.config.globalVariables['vulnerabilities'] = [finding] # 重新初始化
+                    except Exception as e:
+                        logger.error(f"记录漏洞发现时出错: {e}")
+                    # --- ---
+                    
         logger.no_format('')
