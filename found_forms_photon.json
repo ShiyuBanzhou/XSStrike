@@ -1,0 +1,620 @@
+[
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/raw1_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/textarea2_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "fp2"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/full_cookies1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "xyz"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js3_notags_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js3notagsfp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/dom/domwrite",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "abc"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": []
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/backslash1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "xyz"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js6_sq",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js6"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/full_useragent1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "xyz"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/oneclick1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "xyz"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/onmouseover_div_unquoted",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "changeme6"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/onmouseover_unquoted_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "val5fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/textarea1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "foo1"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "post1",
+            "method": "post",
+            "inputs": [
+                {
+                    "name": "in",
+                    "type": "text",
+                    "value": ""
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/enc2",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "enc2"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "type": "",
+                    "value": ""
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": []
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/basic",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "2change"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/full_headers1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "xyz"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js6_sq_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js6fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/raw1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "<xss>"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js3",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js3"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "page",
+                    "type": "hidden",
+                    "value": "answers"
+                },
+                {
+                    "name": "startover",
+                    "type": "hidden",
+                    "value": "y"
+                },
+                {
+                    "name": "y",
+                    "type": "hidden",
+                    "value": "PROD"
+                },
+                {
+                    "name": "source",
+                    "type": "hidden",
+                    "value": "answers.landing_search"
+                },
+                {
+                    "name": "locale",
+                    "type": "hidden",
+                    "value": "en_US"
+                },
+                {
+                    "name": "question_box",
+                    "type": "text",
+                    "value": "js6fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/textarea1_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "fp1"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/full1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "change_me"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/basic_in_tag",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "2change"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js3_search_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js3"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js_script_close",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "foo"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/onmouseover",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "changeme4"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": []
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js4_dq_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js4_dq_fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "type": "",
+                    "value": "changeme4"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/doubq1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "change_me2"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/onmouseover_unquoted",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "changeme5"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js4_dq",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js4_dq"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/rs1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "change_me3"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/onmouseover_div_unquoted_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "val6fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/enc2_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "enc2_fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "type": "",
+                    "value": ""
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js3_notags",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js3_notags"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js3_fp",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js3fp"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/textarea2",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "foo2"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://localhost:8080/xss/reflect/js6_sq_combo1",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "in",
+                    "value": "js6"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": []
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "question_box",
+                    "type": "text",
+                    "value": "js6"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "http://games.search.yahoo.com/search;_ylt=AwrBEiIUEupTSgkAM9PUwOZ_",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "p",
+                    "type": "text",
+                    "value": "js3"
+                },
+                {
+                    "name": "fr2",
+                    "type": "hidden",
+                    "value": "sb-top"
+                },
+                {
+                    "name": "fr",
+                    "type": "hidden",
+                    "value": "sfpjs3"
+                }
+            ]
+        }
+    },
+    {
+        "0": {
+            "action": "",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "financemorningbrief",
+                    "type": "checkbox",
+                    "value": ""
+                },
+                {
+                    "name": "sportsdaily",
+                    "type": "checkbox",
+                    "value": ""
+                },
+                {
+                    "name": "theyodel",
+                    "type": "checkbox",
+                    "value": ""
+                }
+            ]
+        },
+        "1": {
+            "action": "",
+            "method": "get",
+            "inputs": [
+                {
+                    "name": "financemorningbrief",
+                    "type": "checkbox",
+                    "value": ""
+                },
+                {
+                    "name": "sportsdaily",
+                    "type": "checkbox",
+                    "value": ""
+                },
+                {
+                    "name": "theyodel",
+                    "type": "checkbox",
+                    "value": ""
+                }
+            ]
+        }
+    }
+]
