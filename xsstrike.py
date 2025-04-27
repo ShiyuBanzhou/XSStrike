@@ -113,7 +113,10 @@ core.config.globalVariables = vars(args)
 
 # --- 初始化漏洞存储列表 ---
 core.config.globalVariables['vulnerabilities'] = []
-# ---  ---
+# --- ---
+# --- 初始化可注入 URL 存储集合 ---
+core.config.globalVariables['injectable_urls'] = set()
+# --- ---
 
 # Import everything else required from core lib
 from core.config import blindPayload
@@ -233,6 +236,25 @@ finally: # 确保无论如何都尝试保存结果
             with open("vulnerable_findings.json", "w", encoding="utf-8") as f:
                 json.dump(unique_vulns_list, f, indent=4, ensure_ascii=False)
             logger.good("漏洞发现已保存至 vulnerable_findings.json")
+            # --- 添加保存 TXT 文件的逻辑 ---
+            try:
+                with open("vulnerable_findings.txt", "w", encoding="utf-8") as f_txt:
+                    # 写入标题
+                    f_txt.write("潜在漏洞列表 (URL | 参数 | Payload)\n")
+                    f_txt.write("=" * 60 + "\n")
+
+                    # 遍历去重后的漏洞列表
+                    for vuln in unique_vulns_list:
+                        url = vuln.get('url', 'N/A')
+                        parameter = vuln.get('parameter', 'N/A')
+                        payload = vuln.get('payload', 'N/A')
+                        # 拼接成一行写入
+                        f_txt.write(f"{url} | {parameter} | {payload}\n")
+
+                logger.good("漏洞发现已拼接并保存至 vulnerable_findings.txt")
+            except Exception as e_txt:
+                logger.error(f"保存 TXT 格式漏洞发现失败: {e_txt}")
+            # --- ---
         except Exception as e:
             logger.error(f"保存漏洞发现失败: {e}")
     else:

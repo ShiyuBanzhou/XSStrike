@@ -1,7 +1,7 @@
 import re
 
 
-def zetanize(response):
+def zetanize(response, current_url):
     def e(string):
         return string.encode('utf-8')
 
@@ -18,7 +18,9 @@ def zetanize(response):
         page = re.search(r'(?i)action=[\'"](.*?)[\'"]', match)
         method = re.search(r'(?i)method=[\'"](.*?)[\'"]', match)
         forms[num] = {}
-        forms[num]['action'] = d(e(page.group(1))) if page else ''
+        # 如果解析到了 action (page 不为 None)，则使用解析到的 action
+        # 否则 (action 缺失或为空)，使用传入的 current_url
+        forms[num]['action'] = d(e(page.group(1))) if page else current_url
         forms[num]['method'] = d(
             e(method.group(1)).lower()) if method else 'get'
         forms[num]['inputs'] = []
